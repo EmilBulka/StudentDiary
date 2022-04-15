@@ -13,18 +13,22 @@ namespace StudentsDiary
         public static string FilePath = Path.Combine
                 (Environment.CurrentDirectory, "students.txt");
 
-       
+
 
         [STAThread]
         static void Main()
         {
 
-            
+
+
+
 
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Main());
         }
+
+      
     }
 }
