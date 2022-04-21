@@ -17,5 +17,8 @@ Project is created with:
 To open this app, run code with visual studio.
 
 ## Screenshots
-![image](https://user-images.githubusercontent.com/74752413/164175390-43626e02-01d7-44b3-972b-460a0e1c13c0.png)
-![image](https://user-images.githubusercontent.com/74752413/164175545-0f9ce4a9-50bb-4bc8-a82b-38eac3d34c9c.png)
+![image](https://user-images.githubusercontent.com/74752413/164479828-e637cb4f-bc5d-4a96-a1c4-44e701d98370.png)
+![image](https://user-images.githubusercontent.com/74752413/164479970-a810623d-8135-4d8f-889e-3926f286d8c0.png)
+
+
+
