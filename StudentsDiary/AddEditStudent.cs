@@ -17,12 +17,9 @@ namespace StudentsDiary
         {
             InitializeComponent();
             _studentId = id;
-
-
-
             GetStudentData();
             tbFirstName.Select();
-
+            AddGroupsToMainWindowList();
            
         }
 
@@ -55,6 +52,9 @@ namespace StudentsDiary
             tbPhysics.Text = _student.Physics;
             tbPolishLang.Text = _student.PolishLang;
             tbTechnology.Text = _student.Technology;
+            chbExtraLessons.Checked = _student.ExtraLessons;
+            cbGroupID.Text = _student.GroupID;
+
         }
 
         private void btnAccept_Click(object sender, EventArgs e)
@@ -91,7 +91,9 @@ namespace StudentsDiary
                 Math = tbMath.Text,
                 Physics = tbPhysics.Text,
                 PolishLang = tbPolishLang.Text,
-                Technology = tbTechnology.Text
+                Technology = tbTechnology.Text,
+                ExtraLessons = chbExtraLessons.Checked,
+                GroupID = cbGroupID.Text
 
 
             };
@@ -107,6 +109,18 @@ namespace StudentsDiary
 
             _studentId = studentsWithHighestId == null ?
                 1 : studentsWithHighestId.Id + 1;
+        }
+
+        private void AddGroupsToMainWindowList()
+        {
+            for (int i = 1; i < Program.ListOfGroups.Count; i++)
+
+            {
+                cbGroupID.Items.Add(Program.ListOfGroups[i]);
+            }
+
+            
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

@@ -34,6 +34,7 @@ namespace StudentsDiary
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.dgvDiary = new System.Windows.Forms.DataGridView();
+            this.cbSelectGroup = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiary)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,12 +99,22 @@ namespace StudentsDiary
             this.dgvDiary.Size = new System.Drawing.Size(1025, 511);
             this.dgvDiary.TabIndex = 4;
             // 
+            // cbSelectGroup
+            // 
+            this.cbSelectGroup.FormattingEnabled = true;
+            this.cbSelectGroup.Location = new System.Drawing.Point(885, 22);
+            this.cbSelectGroup.Name = "cbSelectGroup";
+            this.cbSelectGroup.Size = new System.Drawing.Size(152, 24);
+            this.cbSelectGroup.TabIndex = 5;
+            this.cbSelectGroup.Text = "Wszystkie grupy";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1049, 594);
+            this.Controls.Add(this.cbSelectGroup);
             this.Controls.Add(this.dgvDiary);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnDelete);
@@ -123,6 +134,7 @@ namespace StudentsDiary
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.DataGridView dgvDiary;
+        private System.Windows.Forms.ComboBox cbSelectGroup;
     }
 }
 

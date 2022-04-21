@@ -22,10 +22,14 @@ namespace StudentsDiary
         public Main()
         {
             InitializeComponent();
-
-
             RefreshDiary();
             SetColumnsHeader();
+            AddGroupsToMainList("Wszystkie grupy");
+            AddGroupsToMainList("1A");
+            AddGroupsToMainList("2A");
+            AddGroupsToMainList("3A");
+            AddGroupsToMainWindowList();
+            
  
         }
 
@@ -40,16 +44,35 @@ namespace StudentsDiary
             dgvDiary.Columns[6].HeaderText = "Fizyka";
             dgvDiary.Columns[7].HeaderText = "Język polski";
             dgvDiary.Columns[8].HeaderText = "Język obcy";
+            dgvDiary.Columns[9].HeaderText = "Zajęcia dodatkowe";
+            dgvDiary.Columns[10].HeaderText = "Grupa";
 
         }
         private void RefreshDiary()
         {
             var students = _fileHelper.DeserializeFromFile();
-            dgvDiary.DataSource = students;
+            if (cbSelectGroup.Text == "Wszystkie grupy")
+                dgvDiary.DataSource = students;
+            else
+                dgvDiary.DataSource = students.Where(s => s.GroupID == cbSelectGroup.Text).ToList();
+              
+
+
         }
 
-       
+       private void AddGroupsToMainList(string groupID)
+        {
+            Program.ListOfGroups.Add(groupID);
+        }
 
+        private void AddGroupsToMainWindowList()
+        {
+            foreach (var group in Program.ListOfGroups)
+            {
+                cbSelectGroup.Items.Add(group);
+            }
+           
+        }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
